@@ -19,22 +19,20 @@ friendships = [(0, 1), (0, 2), (1, 2), (1, 3), (2, 3), (3, 4),
 # first give each user an empty list
 for a in users:
 
-    a["friends"] = []
+    a["friends_id"] = []
 
 
 
 for i, j in friendships:
         # this works because users[i] is the user whose id is i
-    users[i]["friends"].append(users[j]['id'])  # add i as a friend of j
-    users[j]["friends"].append(users[i]['id'])  # add j as a friend of i
+    users[i]["friends_id"].append(users[j]['id'])  # add i as a friend of j
+    users[j]["friends_id"].append(users[i]['id'])  # add j as a friend of i
 
 def number_of_friends(user):
-    return len(user["friends"])  # length of friend_ids list
+    return len(user["friends_id"])  # length of friend_ids list
 
 for user in users:
     user["num_of_friends"] = number_of_friends(user)
 
-
 for user in users:
     print (user)
-    #print ()
