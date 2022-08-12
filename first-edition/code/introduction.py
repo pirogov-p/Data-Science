@@ -79,7 +79,7 @@ def friends_of_friend_ids(user):
                    if not_the_same(user, foaf)    # who aren't me
                    and not_friends(user, foaf))   # and aren't my friends
 
-print friends_of_friend_ids(users[3]) # Counter({0: 2, 5: 1})
+print (friends_of_friend_ids(users[3]) # Counter({0: 2, 5: 1})
 
 interests = [
     (0, "Hadoop"), (0, "Big Data"), (0, "HBase"), (0, "Java"),
@@ -196,19 +196,19 @@ words_and_counts = Counter(word
 
 if __name__ == "__main__":
 
-    print
-    print "######################"
-    print "#"
-    print "# FINDING KEY CONNECTORS"
-    print "#"
-    print "######################"
-    print
+   # print
+   # print "######################"
+   # print "#"
+   # print "# FINDING KEY CONNECTORS"
+   # print "#"
+   # print "######################"
+   # print
 
 
-    print "total connections", total_connections
-    print "number of users", num_users
-    print "average connections", total_connections / num_users
-    print
+    print ("total connections", total_connections)
+    print ("number of users", num_users)
+    print ("average connections", total_connections / num_users)
+    print ()
 
     # create a list (user_id, number_of_friends)
     num_friends_by_id = [(user["id"], number_of_friends(user))
@@ -246,10 +246,10 @@ if __name__ == "__main__":
     print "######################"
     print "#"
     print "# MOST COMMON WORDS"
-    print "#"
-    print "######################"
-    print
+    print ("#")
+    print ("######################")
+    print ()
 
     for word, count in words_and_counts.most_common():
         if count > 1:
-            print word, count
+            print (word, count)
