@@ -1,5 +1,4 @@
 import pymysql
-
 from network import host,user,password,db_name
 
 try:
@@ -9,7 +8,8 @@ try:
         user = user,
         password = password,
         database = db_name,
-        cursorclass = pymysql.sursors.DictCursor
+        cursorclass = pymysql.cursors.DictCursor
     )
+    print ('CONNECT!')
 except Exception as ex :
     print ('EROR')
