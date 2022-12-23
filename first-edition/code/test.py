@@ -18,9 +18,7 @@ friendships = [(0, 1), (0, 2), (1, 2), (1, 3), (2, 3), (3, 4),
 
 # first give each user an empty list
 for a in users:
-
     a["friends_id"] = []
-
 
 
 for i, j in friendships:
