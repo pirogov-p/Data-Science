@@ -12,7 +12,7 @@ try:
     )
     print('CONNECT!')
     print('#' * 20)
-    try:
+    try: '''
         #delete data
         with connection.cursor() as cursor:
             delete_query = "DELETE FROM transaction WHERE id_transaction >= 5 AND id_transaction < 10;"
@@ -27,15 +27,14 @@ try:
                     " VALUES (" + str(i + 5) + ", " + str(i * 108 + 100) + "," + str(10 - i) + ",'buy',1);")
                 print(insert_list[i])
                 cursor.execute(insert_list[i]) 
-        connection.commit() '''
+        connection.commit()
         with connection.cursor() as cursor:
             sql = "SELECT * FROM tinkoff.transaction "
             cursor.execute(sql)
             result = cursor.fetchall()
             for a in result:
                 print(a)
-
-
+'''
     finally:
         connection.close()
 
