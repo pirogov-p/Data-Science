@@ -22,7 +22,7 @@ try:
         with connection.cursor() as cursor:
             for a in range(4):
                 insert_list2 = (
-                "INSERT INTO tinkoff.transaction (id_transaction, price_paper, paper_count,transaction_type,paper_id,rud_dt)"
+                "INSERT INTO tinkoff.transaction (id_transaction, price_paper, paper_count,transaction_type,paper_id,run_dt)"
                 "VALUES (%s, %s, %s, %s,%s,%s)"
                 )
                 data = (a+20, 20*a, 20-a,'sell',2,'1991-03-21')
