@@ -1,0 +1,21 @@
+        with connection.cursor() as cursor:
+            sql = "SELECT * FROM tinkoff.transaction "
+            cursor.execute(sql)
+            result = cursor.fetchone()
+            print(result)
+ --------------------------------------
+               try:
+        with connection.cursor() as cursor:
+            insert_list = []
+            for i in range(4):  # равносильно инструкции for i in 0, 1, 2, 3:
+                insert_list.append(
+                    "INSERT INTO transaction (id_transaction, price_peper, peper_count,transaction_type,paper_id)"
+                    " VALUES (" + str(i + 5) + ", " + str(i * 108 + 100) + "," + str(10 - i) + ",'buy',1);")
+                print(insert_list[i])
+
+            cursor.commit()
+
+
+
+    finally:
+        connection.close()
