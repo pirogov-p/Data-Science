@@ -1,5 +1,6 @@
 import pymysql
-from connect import host,user,password,db_name
+from config import host, user, password, db_name
+
 
 try:
     connection = pymysql.connect(
@@ -10,8 +11,9 @@ try:
         database=db_name,
         cursorclass=pymysql.cursors.DictCursor
     )
-    print('CONNECT!')
-    print('#' * 20)
+    print("successfully connected...")
+    print("#" * 20)
+
     try:
         # cursor = connection.cursor()
 
@@ -68,11 +70,10 @@ try:
         #     cursor.execute(drop_table_query)
 
         # select all data from table
-
         with connection.cursor() as cursor:
             select_all_rows = "SELECT * FROM `transaction`"
             cursor.execute(select_all_rows)
-            # cursor.execute("SELECT * FROM `users`")
+            # cursor.execute("SELECT * FROM `transaction`")
             rows = cursor.fetchall()
             for row in rows:
                 print(row)
@@ -80,17 +81,7 @@ try:
 
     finally:
         connection.close()
- """   try:
-        with connection:
-            with connection.cursor() as cursor:
-                sql = "SELECT id_transaction FROM transaction "
-                cursor.execute(sql)
-                result = cursor.fetchall()
-            for a in result:
-                print(a)
-    finally:
-        connection.close()
-        """
-except Exception as ex:
-    print('EROR')
 
+except Exception as ex:
+    print("Connection refused...")
+    print(ex)
