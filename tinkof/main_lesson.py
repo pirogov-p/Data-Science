@@ -1,5 +1,5 @@
 import pymysql
-from config import host, user, password, db_name
+from connect import host, user, password, db_name
 
 
 try:
